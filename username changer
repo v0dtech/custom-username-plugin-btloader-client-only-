@@ -14,7 +14,7 @@ module.exports = {
     },
 
     patch() {
-        const oldName = "YOUR_REAL_USERNAME";
+        const oldName = ".v0d.";
         const fakeName = "21";
 
         const replace = () => {
