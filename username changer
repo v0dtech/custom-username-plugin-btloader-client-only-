@@ -1,0 +1,29 @@
+// LocalUsername.plugin.js
+
+module.exports = {
+    name: "LocalUsername",
+    description: "Changes your own displayed username locally",
+    authors: ["you"],
+
+    start() {
+        this.patch();
+    },
+
+    stop() {
+        location.reload();
+    },
+
+    patch() {
+        const oldName = "YOUR_REAL_USERNAME";
+        const fakeName = "21";
+
+        const replace = () => {
+            document.body.innerHTML = document.body.innerHTML.replaceAll(
+                oldName,
+                fakeName
+            );
+        };
+
+        setInterval(replace, 2000);
+    }
+};
